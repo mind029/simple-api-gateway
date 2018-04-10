@@ -1,6 +1,21 @@
 # simple-api-gateway
 使用openresty的api网关程序
 
+## 命令
+
+启动
+
+```
+sudo openresty -p /Users/mind/development/code/Openresty/Github/simple-api-gateway -c conf/nginx.conf
+
+```
+
+## 网关开发思路
+
+1. 在 `access_by_lua_file` 阶段对请求参数、api接口等进行验证
+2. 在 `body_filter_by_lua_file` 阶段对api接口响应的 json 数据进行 JSON SCHEMA ，判断是否符合对应规则，如果不符合 log 错误。
+
+
 ## 开发日志
 ### 2017-12-16 更改日志
 
